@@ -9,12 +9,27 @@ public class Series1 {
 
 	public static String helloWorld(String name) {
 		//1
-		return null;
+		if ( name == null || name == ""){
+			return "Hello World";
+		}
+		else {
+			return "Hello " + name;
+		}
 	}
 	
 
 	public static String[] removeNullElements(String[] array) {
 		//2
+		ArrayList<String> arrayList = new ArrayList<String>()
+		
+
+		for (int i = 0; i< array.length ; i++){
+			if array[] != null { 
+
+				arrayList.add(array[i]);
+
+			}
+		}
 		return null;
 	}
 
