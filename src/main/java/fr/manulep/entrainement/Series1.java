@@ -1,6 +1,8 @@
 package fr.manulep.entrainement;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class Series1 {
 	
@@ -33,7 +35,7 @@ public class Series1 {
 
 			} 
 		}
-		//array2 = arrayList.toArray(array2);
+		;
 		String[] array2 = arrayList.toArray(new String[0]);
 		return array2;
 
@@ -56,7 +58,7 @@ public class Series1 {
 	public static int[] allElementsExceptFirstThree(int[] array) {
 		//4
 		int longueur = array.length;
-		if (longueur > 3){
+		if ( longueur > 3){
 			
 			int[] array2 = new int[longueur-3];
 			for (int i=3 ; i < array.length; i=i+1){
@@ -74,8 +76,20 @@ public class Series1 {
 	
 	public static String getFirstHalf(String word) {
 		//5
-		int longueur= word.length;
-		return null;
+
+
+		//System.out.println(word);
+		//System.out.println(word.length());
+
+		if (word.length()%2 == 0){
+		return  word.substring(0,word.length()/2);
+		} else {
+			
+			return  word.substring(0,word.length()/2+1);
+		}
+		
+		
+		
 	}
 	
 	public static String[] selectElementsStartingWithA(String[] array) {
@@ -124,17 +138,32 @@ public class Series1 {
 
 	public static long addingSeveralNumbers(final Integer... numbers) {
 		//14
-		return -1;
+		int result = 0 ;
+		for (int i : numbers){
+			result = result + i;
+				}
+
+		return result  ;
 	}
 
 	public static float makeNegative(float number) {
 		//15
-		return 0;
+		if (number < 0){
+			return number;
+		} else { 
+			number = number - 2*number;
+			return number;
+		}
+		
 	}
 
 	public static boolean checkForSpecialCharacters(String string) {
 		//16
-		return false;
+		Pattern pattern = Pattern.compile("[^a-zA-Z0-9!]");
+        Matcher matcher = pattern.matcher(string);
+        boolean isStringContainsSpecialCharacter = matcher.find();
+
+		return isStringContainsSpecialCharacter;
 	}
 
 	public static boolean checkIfStringStartsWithConsonant( String word ) {
@@ -149,7 +178,15 @@ public class Series1 {
 
 	public static int[] letterPosition(String name) {
 		//19
-		return null;
+		String minus = name.toLowerCase();
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		System.out.println(minus);
+		int[] position = new int[name.length()];
+		for(int i=0; i < name.length(); i++){
+			position[i]=alphabet.indexOf(minus.charAt(i))+1;
+		}
+	
+		return position;
 	}
 
 	public static boolean isPeer(int number) {
