@@ -2,6 +2,9 @@ package fr.manulep.entrainement;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import java.util.regex.Matcher;
 
 public class Series1 {
@@ -168,7 +171,15 @@ public class Series1 {
 
 	public static boolean checkIfStringStartsWithConsonant( String word ) {
 		//17
-		return false;
+		System.out.println(word);
+		String debut=Character.toString(word.charAt(0));
+		System.out.println(debut);
+		Pattern pattern = Pattern.compile("[bdfhjnptvzqBDFHJNPTQVZQ]");
+		Matcher matcher = pattern.matcher(debut);
+		boolean alors = matcher.find();
+		System.out.println(alors);
+
+		return alors;
 	}
 
 	public static String getDomainName(String email) {
@@ -191,7 +202,9 @@ public class Series1 {
 
 	public static boolean isPeer(int number) {
 		//20
-		return false;
+		if ( number%2 != 0){
+			return false;
+		} else { return true;}
 	}
 
 
