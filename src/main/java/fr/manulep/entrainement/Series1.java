@@ -107,7 +107,16 @@ public class Series1 {
 	
 	public static String[] reverseOrderInArray(String[]array) {
 		//8
-		return null;
+		
+		String[] reversedArray = new String[array.length];
+		int i = array.length-1;
+		//System.out.println(i);
+		for ( String mot : array){
+		reversedArray[i] = mot;
+		i--;
+		//System.out.println(i);
+		}
+		return reversedArray;
 	}
 
 	public static int[] insertElementInTheMiddleOfAnArray(int[] array, int element) {
@@ -122,7 +131,8 @@ public class Series1 {
 
 	public static String removeCapitals(String text) {
 		//11
-		return null;
+		String wthCapitals = text.replaceAll("[A-Z]", "");
+		return wthCapitals;
 	}
 	
 	public static long addingTwoNumbers(long number1, long number2) {
