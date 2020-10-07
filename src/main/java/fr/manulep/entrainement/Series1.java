@@ -1,5 +1,7 @@
 package fr.manulep.entrainement;
 
+import java.util.ArrayList;
+
 public class Series1 {
 	
 	private Series1() {
@@ -20,31 +22,59 @@ public class Series1 {
 
 	public static String[] removeNullElements(String[] array) {
 		//2
-		ArrayList<String> arrayList = new ArrayList<String>()
+		
+		ArrayList<String> arrayList= new ArrayList<String>();
 		
 
-		for (int i = 0; i< array.length ; i++){
-			if array[] != null { 
+		for (String element : array) {
+			if (element != null) { 
 
-				arrayList.add(array[i]);
+				arrayList.add(element);
 
-			}
+			} 
 		}
-		return null;
+		//array2 = arrayList.toArray(array2);
+		String[] array2 = arrayList.toArray(new String[0]);
+		return array2;
+
+		
 	}
 
 	public static int[] addElementToBeginning(int[] array, int element) {
 		//3
-		return null;
+		int longueur = array.length;
+		int[] array2 = new int[longueur+1];
+
+		array2[0] = element;
+
+		for (int i = 1 ; i < array2.length ; i = i + 1){
+			array2[i] = array[i-1];
+		}
+		return array2;
 	}
 	
 	public static int[] allElementsExceptFirstThree(int[] array) {
 		//4
-		return null;
+		int longueur = array.length;
+		if (longueur > 3){
+			
+			int[] array2 = new int[longueur-3];
+			for (int i=3 ; i < array.length; i=i+1){
+				array2[i-3]=array[i];
+			}
+			return array2;
+		} else { 
+			int[] array3 = {} ;
+			return array3;
+	}
+		
+
+	
 	}
 	
 	public static String getFirstHalf(String word) {
 		//5
+		int longueur= word.length;
 		return null;
 	}
 	
@@ -80,12 +110,16 @@ public class Series1 {
 	
 	public static long addingTwoNumbers(long number1, long number2) {
 		//12
-		return -1;
+		long result;
+		result = number1 + number2 ;
+		return result;
 	}
 
 	public static long addingThreeNumbers(long number1, long number2, long number3) {
 		//13
-		return -2;
+		long result;
+		result = number1 + number2 + number3;
+		return result;
 	}
 
 	public static long addingSeveralNumbers(final Integer... numbers) {
