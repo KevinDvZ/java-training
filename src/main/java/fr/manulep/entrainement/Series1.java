@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-import javax.swing.tree.DefaultMutableTreeNode;
+//import javax.swing.tree.DefaultMutableTreeNode;
 
 import java.util.regex.Matcher;
 
@@ -145,7 +145,43 @@ public class Series1 {
 
 	public static int[] insertElementInTheMiddleOfAnArray(int[] array, int element) {
 		// 9
-		return null;
+
+		int[] nouvelArray = new int[array.length + 1];
+		// int lol = nouvelArray.length;
+		// System.out.println(element);
+		// System.out.println(nouvelArray[2]);
+
+		if (array.length == 0) {
+			nouvelArray[0] = element;
+		} else if (array.length % 2 == 0) {
+			for (int i = 0; i < nouvelArray.length / 2; i++) {
+				nouvelArray[i] = array[i];
+				// System.out.println(nouvelArray[i]);
+
+			}
+
+			nouvelArray[array.length / 2] = element;
+			// System.out.println(nouvelArray[array.length / 2]);
+
+			for (int i = array.length / 2 + 1; i < nouvelArray.length; i++) {
+				nouvelArray[i] = array[i - 1];
+				// System.out.println(nouvelArray[i]);
+			}
+
+		} else {
+			for (int i = 0; i < array.length / 2; i++) {
+				nouvelArray[i] = array[i];
+				// System.out.println(nouvelArray[i]);
+
+			}
+			nouvelArray[array.length / 2] = element;
+			for (int i = array.length / 2 + 1; i < nouvelArray.length; i++) {
+				nouvelArray[i] = array[i - 1];
+				// System.out.println(nouvelArray[i]);
+			}
+		}
+		System.out.println(Arrays.toString(nouvelArray));
+		return nouvelArray;
 	}
 
 	public static String shortestWord(String text) {
@@ -234,6 +270,7 @@ public class Series1 {
 
 	public static String getDomainName(String email) {
 		// 18
+		// anciens essais infructueux :
 		// email.replaceAll(".*?\.(.*?\.[a-zA-Z]+)", "");
 		// String DomainName = new String();
 		// DomainName = email.replaceAll("(?<=@)[^.]+", "");
@@ -243,13 +280,9 @@ public class Series1 {
 		// DomainName = email.substring(email.indexOf("@") + 1);
 		// System.out.println(matcher.DomainName);
 		// return email.replaceAll("(?<=@)[^.]+", "");
-		return email.replaceAll("(^.*@|.com$)", "");
+		return email.replaceAll("(^.*@|.com$)", ""); // là c'est bon !
 
-		// return matcher;
 	}
-	/*
-	 * [^@].+(?=\.) (?<=@)[^.]+
-	 */
 
 	public static int[] letterPosition(String name) {
 		// 19
