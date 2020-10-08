@@ -1,5 +1,5 @@
 # java-training
 
-Projet d'entrainement au code Java
+Première série d'entrainement au code Java terminé. En collaboration avec Noémie.
 
-![Coding](https://media.giphy.com/media/QHE5gWI0QjqF2/giphy.gif)
+[image info](./img/impecranBoutonsVerts.jpg)
